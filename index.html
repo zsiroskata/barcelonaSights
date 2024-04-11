@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Barcelona Sights</title>
+</head>
+<body ng-controller="myCrl">
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>What to see</li>
+            <li>Gallery</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <!--   header end   -->
+    <div class="content">
+        <table>
+            <tr ng-repeat="card in cards">
+                <th>{{card.title}}</th>
+                    <td>{{card.description}}</td>
+                    <td><img ng-src="img/{{card.img}}.jpg" alt=""></td>
+                </tr>
+        </table>
+    </div>
+    <!--   content end  -->
+
+    <footer>
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="ico/Facebook_logo_(square).png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="ico/instagram-Logo-PNG-Transparent-Background-download.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="ico/twitter.png" alt="">
+                </a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>2660 Balassagyarmat, Rákóczi fejedelem útja 50</li>
+            <li>06 55 682 061</li>
+            <li>
+                <a href="#">
+                    horefa9564@rartg.com
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script>
+        let app = angular.module("myApp", []);
+        app.controller("myCrl", function($scope, $http) {
+            $http.get("database_content.json").then(function(response) {
+                $scope.cards = response.data;
+                console.log($scope.cards)
+            })
+        })
+
+    </script>
+</body>
+</html>

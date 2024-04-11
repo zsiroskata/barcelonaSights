@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+}
+
+nav{
+    top: 0px;
+    width: 100%;
+    display: block;
+    position: fixed ;
+    background-color: aqua;
+}
+nav ul{
+    display: flex ;
+    justify-content:  space-evenly ;
+}
+
+nav ul li{
+    display: block;
+    list-style: none;
+    padding: 10px;
+}
+nav ul li:hover{
+    background-color: blue;
+}
+/*
+- - - - - - Nav END - - - - - - -
+*/
+
+/*
+- - - - - - content START - - - - - - -
+*/
+
+.content{
+    margin-top: 100px;
+    width: 100%;
+
+}
+
+.content table{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.content table tr{
+    display: grid;
+    grid-column: 1/4;
+
+}
+/*
+- - - - - - content END - - - - - - -
+*/
+
+
+footer{
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer ul{
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+footer ul li img{
+    max-width: 50px;
+}
+footer ul li{
+    list-style: none;
+}
+footer ul li a {
+    text-decoration: none;
+}
