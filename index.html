@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Barcelona Sights</title>
 </head>
@@ -17,14 +18,24 @@
         </ul>
     </nav>
     <!--   header end   -->
+
     <div class="content">
-        <table>
-            <tr ng-repeat="card in cards">
-                <th>{{card.title}}</th>
-                    <td>{{card.description}}</td>
-                    <td><img ng-src="img/{{card.img}}.jpg" alt=""></td>
-                </tr>
-        </table>
+        <div class="card-container">
+            <div class="card" ng-repeat="card in cards.slice(currentIndex, currentIndex + 3)">
+                <h3>{{ card.title }}</h3>
+                <p>{{ card.description }}</p>
+                <img ng-src="img/{{ card.img }}.jpg" alt="{{ card.title }}">
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button ng-click="prev()" ng-disabled="currentIndex === 0">Previous</button>
+            <button ng-click="next()" ng-disabled="currentIndex >= cards.length - 3">Next</button>
+        </div>
+    </div>
+
+
+        
     </div>
     <!--   content end  -->
 
@@ -58,13 +69,7 @@
         </ul>
     </footer>
     <script>
-        let app = angular.module("myApp", []);
-        app.controller("myCrl", function($scope, $http) {
-            $http.get("database_content.json").then(function(response) {
-                $scope.cards = response.data;
-                console.log($scope.cards)
-            })
-        })
+
 
     </script>
 </body>
