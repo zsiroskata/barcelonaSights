@@ -1,0 +1,31 @@
+body{
+    background-color: rgba(170, 234, 253, 0.336);
+}
+
+.content{
+    margin:  250px 20% ;
+    height: 100%;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+
+    line-height: 1.5;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+#join{
+    text-align: center;
+}
+
+footer{
+    position: fixed;
+}

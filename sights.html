@@ -6,20 +6,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sights.css">
     <title>Barcelona Sights</title>
 </head>
 <body ng-controller="myCrl">
     <nav>
         <ul>
-            <li>Home</li>
-            <li>What to see</li>
-            <li>Gallery</li>
-            <li>Contact</li>
+            <li>
+                <a href="main.html">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="sights.html">
+                    What to see
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Gallery
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Contact
+                </a>
+            </li>
         </ul>
     </nav>
     <!--   header end   -->
-
     <div class="content">
+        <h2></h2>
         <div class="card-container">
             <div class="card" ng-repeat="card in cards.slice(currentIndex, currentIndex + 3)">
                 <h3>{{ card.title }}</h3>

@@ -1,0 +1,44 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 100px 10px;
+}
+
+.card {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    transition: transform 0.5s ease;
+}
+
+.card.active {
+    transform: scale(1.1); 
+}
+.card-container h3{
+    display: flex;
+    justify-content: center;
+}
+.card-container p{
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+button {    
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.navigation{
+    display: flex;
+    margin-bottom: 0;
+    margin-bottom: 100px;
+    justify-content: center;
+}
