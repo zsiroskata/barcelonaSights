@@ -3,13 +3,13 @@ body{
 }
 
 .content{
-    margin:  250px 20% ;
+    margin:  250px 10% ;
     height: 100%;
 }
 
 h2{
     display: flex;
-    justify-content: center;
+    justify-items: center;
     font-size: xx-large;
 }
 
