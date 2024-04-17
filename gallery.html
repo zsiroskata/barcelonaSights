@@ -6,7 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/sights.css">
+    <link rel="stylesheet" href="css/gallery.css">
+
     <title>Barcelona Sights</title>
 </head>
 <body ng-controller="myCrl">
@@ -38,20 +39,12 @@
     <div class="content">
       
         <div class="card-container">
-            <div class="card" ng-repeat="card in cards.slice(currentIndex, currentIndex + 3)">
-                <h3>{{ card.title }}</h3>
-                <p>{{ card.description }}</p>
+            <div class="card" ng-repeat="card in cards">
                 <img ng-src="img/{{ card.img }}.jpg" alt="{{ card.title }}" class="responsive">
             </div>
-        </div>
-
-        <div class="navigation">
-            <button ng-click="prev()" ng-disabled="currentIndex === 0">Previous</button>
-            <button ng-click="next()" ng-disabled="currentIndex >= cards.length - 3">Next</button>
+            
         </div>
     </div>
-
-
 
     <!--   content end  -->
 
